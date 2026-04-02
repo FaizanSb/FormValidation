@@ -1,36 +1,45 @@
-// This is server.js folder
-import express from "express";
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
 
 const app = express();
 
-// Middleware
+app.use(cors());
 app.use(express.json());
 
-// Test route
-app.get("/", (req, res) => {
-    res.send("Backend is running 🚀");
+// MongoDB connect
+mongoose.connect('mongodb://localhost:27017/formValidation')
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
+
+  // User schema
+const userSchema = new mongoose.Schema({
+  username: String,
+  email: String,
+  password: String,
 });
 
-// Test API route
-app.get("/api/test", (req, res) => {
-    res.json({
-        message: "API is working ✅"
-    });
+const User = mongoose.model('User', userSchema);
+
+// Register route
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
 
-// POST test
-app.post("/api/test", (req, res) => {
-    console.log(req.body);
+app.post('/api/register', async (req, res) => {
+  const { username, email, password } = req.body;
 
-    res.json({
-        message: "Data received ✅",
-        data: req.body
-    });
+  const existing = await User.findOne({ email });
+  if (existing) {
+    return res.json({ success: false, error: 'Email already registered.' });
+  }
+
+  const newUser = new User({ username, email, password });
+  await newUser.save();
+
+  res.json({ success: true });
 });
 
-// Server start
-const PORT = 5000;
-
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+app.listen(5000, () => {
+  console.log('Server started on port 5000 listening on http://localhost:5000');
 });
