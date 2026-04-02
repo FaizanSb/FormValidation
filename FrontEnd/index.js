@@ -3,7 +3,7 @@ let form = document.getElementById('form');
 let success = document.getElementById('success');
 let error = document.getElementById('error');
 
-form.addEventListener('submit',(e)=>{
+form.addEventListener('submit',async(e)=>{
     e.preventDefault();
     let username = document.getElementById('username').value.trim();
     let email = document.getElementById('email').value.trim();
@@ -23,8 +23,29 @@ form.addEventListener('submit',(e)=>{
         error.textContent = 'Please enter a valid email address.';
         console.log('Please enter a valid email address.');
     }else{
-        success.textContent = 'Form submitted successfully!';
-        console.log('Form submitted successfully!');
+        // success.textContent = 'Form submitted successfully!';
+        // console.log('Form submitted successfully!');
+        try{
+            const res = await fetch('http://localhost:8000/api/signUp',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            const data = await res.json();
+
+               if(data.success) {
+                success.textContent = 'Form submitted successfully!';
+                console.log('Form submitted successfully!');
+               }else {
+                error.textContent = data.message;
+                console.log(data.message);
+               }
+
+        } catch (err){
+            error.textContent = 'Error while connecting server.';
+            console.log('An error occurred while submitting the form.',err);
+        }
     }
 
 })
