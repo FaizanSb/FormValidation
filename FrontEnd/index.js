@@ -26,7 +26,7 @@ form.addEventListener('submit',async(e)=>{
         // success.textContent = 'Form submitted successfully!';
         // console.log('Form submitted successfully!');
         try{
-            const res = await fetch('http://localhost:8000/api/signUp',{
+            const res = await fetch('http://localhost:5000/api/signUp',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
