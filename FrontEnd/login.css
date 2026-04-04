@@ -1,0 +1,47 @@
+.parent {
+    background-color: purple;
+    height: 60vh;
+    width: 50vw;
+    margin: auto;
+    margin-top: 10vh;
+    border-radius: 10px;
+    /* padding: 10px; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; */
+}
+h2 {
+    color: white;
+    height: 20%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    /* margin: auto; */
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 30px;
+    background-color: blue;
+}
+#form {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+input {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}
+button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}
