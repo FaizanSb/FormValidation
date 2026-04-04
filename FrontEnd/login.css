@@ -45,3 +45,8 @@ button {
     border: none;
     font-size: 18px;
 }
+button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
