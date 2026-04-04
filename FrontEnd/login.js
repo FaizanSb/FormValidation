@@ -1,12 +1,13 @@
 
 let form = document.getElementById('form');
+let error = document.getElementById('error');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     let email = document.getElementById('email').value.trim();
     let password = document.getElementById('password').value.trim();
-
-    let error = document.getElementById('error');
+    error.textContent = '';
+    
     if (email === '' || password === '') {
         error.textContent = 'All fields are required.';
         console.log('All fields are required.');
