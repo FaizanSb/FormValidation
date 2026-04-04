@@ -1,54 +1,144 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f0f0f0;
-    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    background: #f5f4f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: #EEEDFE;
+    top: -80px;
+    right: -60px;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #E1F5EE;
+    bottom: -50px;
+    left: -50px;
+    z-index: 0;
 }
 
 .parent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    background-color: purple;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
-    flex-direction: column;
-}
-.parent h2 {
-    color: black;
-    text-align: center;
-    background-color: purple;
-    padding: 10px;
-    font-size: 25px;
-}
-.parent form {
-    display: flex;
-    flex-direction: column;
+    background: #ffffff;
+    border-radius: 24px;
+    border: 0.5px solid #e0e0e0;
+    padding: 2.5rem 2rem;
     width: 100%;
     max-width: 400px;
-    gap: 15px;
-    background-color: purple;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.5s ease both;
 }
-.parent form input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    font-size: 16px;
+
+#error {
+    background: #FCEBEB;
+    color: #A32D2D;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 0.5px solid #F7C1C1;
+    margin-bottom: 1rem;
+    display: none;
 }
-.parent form button {
-    padding: 10px;
+
+#success {
+    background: #EAF3DE;
+    color: #3B6D11;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 0.5px solid #C0DD97;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #26215C;
+    margin-bottom: 4px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 0.5px solid #d0d0d0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    background: #fafafa;
+    color: #222;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #7F77DD;
+    background: #fff;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    background: #534AB7;
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-    font-size: 16px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
     cursor: pointer;
+    margin-top: 4px;
+    transition: background 0.2s, transform 0.1s;
 }
-.parent form button:hover {
-    background-color: #333;
+
+button[type="submit"]:hover {
+    background: #3C3489;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

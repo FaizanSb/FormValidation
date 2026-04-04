@@ -14,12 +14,15 @@ form.addEventListener('submit',async(e)=>{
     error.textContent = '';
 
     if(username === '' || email === '' || password === '' || confirmPassword === ''){
+        error.style.display = 'block';
         error.textContent = 'All fields are required.';
         console.log('All fields are required.');
     }else if(password !== confirmPassword){
+        error.style.display = 'block';
         error.textContent = 'Passwords do not match.';
         console.log('Passwords do not match.');
     }else if(!email.includes("@")){
+        error.style.display = 'block';
         error.textContent = 'Please enter a valid email address.';
         console.log('Please enter a valid email address.');
     }else{
@@ -40,14 +43,17 @@ form.addEventListener('submit',async(e)=>{
             const data = await res.json();
 
                if(data.success) {
+                success.style.display = 'block';
                 success.textContent = 'Form submitted successfully!';
                 console.log('Form submitted successfully!');
                }else {
+                error.style.display = 'block';
                 error.textContent = data.message;
                 console.log(data.message);
                }
 
         } catch (err){
+            error.style.display = 'block';
             error.textContent = 'Error while connecting server.';
             console.log('An error occurred while submitting the form.',err);
         }

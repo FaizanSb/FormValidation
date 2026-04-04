@@ -1,0 +1,204 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            background: #f5f4f0;
+        }
+
+        .dashboard {
+            min-height: 100vh;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .accent-circle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: #EEEDFE;
+            top: -80px;
+            right: -80px;
+            z-index: 0;
+        }
+
+        .accent-circle-2 {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #E1F5EE;
+            bottom: 40px;
+            left: -40px;
+            z-index: 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #534AB7;
+            letter-spacing: -0.5px;
+        }
+
+        .avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #CECBF6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            color: #3C3489;
+            cursor: pointer;
+        }
+
+        .welcome-card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 0.5px solid #e0e0e0;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            animation: fadeUp 0.4s ease both;
+        }
+
+        .welcome-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: #EEEDFE;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .welcome-text h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #26215C;
+            margin-bottom: 4px;
+        }
+
+        .welcome-text p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #EEEDFE;
+            color: #534AB7;
+            font-size: 11px;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 8px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.5s 0.1s ease both;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 0.5px solid #e0e0e0;
+            padding: 1rem 1.25rem;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-family: 'Syne', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        .stat-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+            background: #1D9E75;
+        }
+
+        .notice {
+            background: #E1F5EE;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            border: 0.5px solid #9FE1CB;
+            animation: fadeUp 0.5s 0.2s ease both;
+        }
+
+        .notice p {
+            font-size: 13px;
+            color: #085041;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #logoutBtn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }

@@ -3,19 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DashBoard</title>
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    <!-- <h1>Welcome Back </h1> -->
-     <script>
-        let username = localStorage.getItem("username");
-        let h1 = document.createElement('h1');
-        let p = document.createElement('p');
-        h1.innerHTML = `Welcome Back ${username}`;
-        p.innerHTML = "This is just for practice project and not for real use";
-        document.body.appendChild(h1);
-        document.body.appendChild(p);
-     </script>
+    <div class="dashboard">
+        <div class="accent-circle"></div>
+        <div class="accent-circle-2"></div>
 
+        <div class="content">
+            <div class="topbar">
+                <span class="logo">MyApp</span>
+                <div class="avatar" id="avatarEl">?</div>
+            </div>
+
+            <div class="welcome-card">
+                <div class="welcome-icon">👋</div>
+                <div class="welcome-text">
+                    <h1 id="welcomeMsg">Welcome back!</h1>
+                    <p>Great to see you again. You're all caught up.</p>
+                    <span class="badge">Active session</span>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Status</div>
+                    <div class="stat-value" style="color:#0F6E56;">
+                        <span class="stat-dot"></span>Online
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Role</div>
+                    <div class="stat-value" style="color:#534AB7;">User</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Access</div>
+                    <div class="stat-value">Full</div>
+                </div>
+            </div>
+
+            <div class="notice">
+                <span style="font-size:16px;">💡</span>
+                <p><strong>Practice project</strong> — This is just for learning purposes and not for real use.</p>
+            </div>
+        </div>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <script>
+        const username = localStorage.getItem('username') || 'Guest';
+        const initial = username.charAt(0).toUpperCase();
+        document.getElementById('welcomeMsg').textContent = `Welcome back, ${username}!`;
+        document.getElementById('avatarEl').textContent = initial;
+        
+        let logout = document.getElementById('logoutBtn');
+        logout.addEventListener('click', () => {
+            localStorage.removeItem('username');
+            window.location.href = 'login.html';
+        });
+    </script>
 </body>
 </html>
