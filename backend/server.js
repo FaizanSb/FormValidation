@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.post('/api/register', async (req, res) => {
+app.post('/api/signUp', async (req, res) => {
   const { username, email, password } = req.body;
 
   const existing = await User.findOne({ email });
