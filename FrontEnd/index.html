@@ -3,25 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Form Validation</title>
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <!-- <h1>This is Form Validation page</h1> -->
-    <div class="parent">
-        <p id="error" style="color: red; font-weight: bold;"></p>
-        <p id="success" style="color: green; font-weight: bold;"></p>
+    <div class="blob1"></div>
+    <div class="blob2"></div>
+    <div class="blob3"></div>
 
-        <h2>SignUp</h2>
-        <form action="" id="form">
-            <input type="text" id="username" placeholder="Username">
-            <input type="email" id="email" placeholder="Email">
-            <input type="password" id="password" placeholder="Password">
-            <input type="password" id="confirm-password" placeholder="Confirm Password">
+    <div class="content">
+        <div class="badge">Form Validator App</div>
+        <h1>Validate forms<br><span>the smart way</span></h1>
+        <p class="desc">A simple and clean form validation system. Sign up to create your account or login if you're already a member.</p>
 
-            <button type="submit" id="submit">Submit</button>
-        </form>
+        <div class="buttons">
+            <a class="btn-primary" href="signup.html">Get Started</a>
+            <a class="btn-secondary" href="login.html">Login</a>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-title">Secure</div>
+                <div class="feature-desc">Password protected</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Fast</div>
+                <div class="feature-desc">Instant validation</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✅</div>
+                <div class="feature-title">Simple</div>
+                <div class="feature-desc">Easy to use</div>
+            </div>
+        </div>
     </div>
-    <script src="index.js"></script>
+
+    <script src="home.js"></script>
 </body>
 </html>

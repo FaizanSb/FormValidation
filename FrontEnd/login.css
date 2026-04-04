@@ -66,18 +66,6 @@ body::after {
     display: none;
 }
 
-#success {
-    background: #EAF3DE;
-    color: #3B6D11;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: 0.5px solid #C0DD97;
-    margin-bottom: 1rem;
-    display: none;
-}
-
 h2 {
     font-family: 'Syne', sans-serif;
     font-size: 22px;

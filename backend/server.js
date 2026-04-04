@@ -26,6 +26,17 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+app.post('/api/login',async (req,res)=>{
+    const {email,password}=req.body;
+
+    const user=await User.findOne({email,password});
+    if(user){
+        res.json({success:true, username:user.username});
+    }else{
+      res.json({success:false,message:"Invalid email or password"})
+    }
+});
+
 app.post('/api/signUp', async (req, res) => {
   const { username, email, password } = req.body;
 
