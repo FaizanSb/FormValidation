@@ -7,11 +7,13 @@ form.addEventListener('submit', async (e) => {
     let email = document.getElementById('email').value.trim();
     let password = document.getElementById('password').value.trim();
     error.textContent = '';
-    
+
     if (email === '' || password === '') {
+        error.style.display = 'block';
         error.textContent = 'All fields are required.';
         console.log('All fields are required.');
     } else if (!email.includes("@")) {
+        error.style.display = 'block';
         error.textContent = 'Please enter a valid email address.';
         console.log('Please enter a valid email address.');
     } else {
@@ -29,8 +31,10 @@ form.addEventListener('submit', async (e) => {
             })
             const data = await res.json();
             if (data.success) {
+                localStorage.setItem("username",data.username);
                 window.location.href = '/dashboard.html';
             } else {
+                error.style.display = 'block';
                 error.textContent = data.message;
             }
         } catch (err) {

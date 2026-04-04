@@ -6,7 +6,16 @@
     <title>DashBoard</title>
 </head>
 <body>
-    <h1></h1>
-    
+    <!-- <h1>Welcome Back </h1> -->
+     <script>
+        let username = localStorage.getItem("username");
+        let h1 = document.createElement('h1');
+        let p = document.createElement('p');
+        h1.innerHTML = `Welcome Back ${username}`;
+        p.innerHTML = "This is just for practice project and not for real use";
+        document.body.appendChild(h1);
+        document.body.appendChild(p);
+     </script>
+
 </body>
 </html>
