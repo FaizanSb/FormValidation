@@ -25,7 +25,8 @@ const User = mongoose.model('User', userSchema);
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
-app.get('/api/login',async (req,res)=>{
+
+app.post('/api/login',async (req,res)=>{
     const {email,password}=req.body;
 
     const user=await User.findOne({email,password});
@@ -35,6 +36,7 @@ app.get('/api/login',async (req,res)=>{
       res.json({success:false,message:"Invalid email or password"})
     }
 });
+
 app.post('/api/signUp', async (req, res) => {
   const { username, email, password } = req.body;
 
